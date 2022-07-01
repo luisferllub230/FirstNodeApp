@@ -6,11 +6,7 @@ const path = require('path');
 let app = express();
 
 //this middleware always runs
-// let num = 0;
-// app.use((req, res, next)=>{
-//     num = Math.round(Math.random()*9) + 1;
-//     next();
-// });
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 //that is the function middleware
