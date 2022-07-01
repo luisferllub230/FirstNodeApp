@@ -1,9 +1,9 @@
-//call the function to get the data
-const http = require('http');
-const routes = require('./routes/route');
+//call the express module
+const express = require('express');
+//initialize the express module
+let app = express();
 
-//create a server with a callback function
-const server = http.createServer(routes);
 
-//listen on port 5500
-server.listen(5500);
+
+//listen to port
+app.listen(5500);
