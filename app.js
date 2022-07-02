@@ -1,18 +1,21 @@
-//call the express module
-const express = require('express');
-//call the path module
-const path = require('path');
-//initialize the express module
-let app = express();
-//call express handlebars
-const expressHbs = require('express-handlebars');
+const express = require('express');//call the express module
+const path = require('path');//call the path module
+
+let app = express();//initialize the express module
+const expressHbs = require('express-handlebars');//call express handlebars
+
+
 
 //this middleware always runs
 app.use(express.static(path.join(__dirname, 'public')));
 
-//that is the function middleware
+//view engine configurations
+app.engine('hbs', expressHbs());
+app.set('view engine', 'hbs');
+app.set('view', path.join(__dirname, 'view'));
+
 app.use("/", (req,res,next) =>{
-    res.sendFile(path.join(__dirname,'view','index.html'));
+    res.render('index',{layout: false});
 });
 
 //listen to port
