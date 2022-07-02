@@ -4,10 +4,11 @@ const express = require('express');
 const path = require('path');
 //initialize the express module
 let app = express();
+//call express handlebars
+const expressHbs = require('express-handlebars');
 
 //this middleware always runs
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 //that is the function middleware
 app.use("/", (req,res,next) =>{
