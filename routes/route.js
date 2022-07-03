@@ -10,7 +10,12 @@ router.get('/contact',(req,res,express)=>{
 
 router.post('/contact',(req,res,express)=>{
 
-    list.push({names: req.body.names,lasName: req.body.lasName, email: req.body.email, message: req.body.description});
+    list.push({
+        names: req.body.names,
+        lastName: req.body.lastName, 
+        email: req.body.email, 
+        message: req.body.description
+    });
     console.log(req.body);
     res.status(302).redirect('/');
 });

@@ -59,17 +59,25 @@
             Contact with me Click <a href="./contac.html">Here</a>  - No Copyright
         </p>
     </footer>
-    {{#if check}}
-        <div class="alert alert-success d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use   xlink:href="#check-circle-fill"/></svg>
-            <div>
-                An example success alert with an icon
-            </div>
-        </div>
-    {{else}}
-        
-    {{/if}}
-
+    <ul>
+        {{#if check}}
+            {{#each list}}
+                <li>
+                    {{this.names}}
+                </li>
+                <li>
+                    {{this.lastName}}
+                </li>
+                <li>
+                    {{this.email}}
+                </li>
+                <li>
+                    {{this.message}}
+                </li>
+            {{/each}}
+        {{else}}
+        {{/if}}
+    </ul>
     <script src="../assets/js/lib/bootstrap.min.js"></script>
 </body>
 </html>
