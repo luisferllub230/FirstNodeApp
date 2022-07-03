@@ -2,8 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 //contacts
-router.get('/contacts',(req,res,express)=>{
+router.get('/contact',(req,res,express)=>{
     res.render('contact',{title: "this is the tittle ",layout: false});
+});
+
+router.post('/contact',(req,res,express)=>{
+    console.log(req.body);
+    res.status(302).redirect('/');
 });
 
 //MyProjects
