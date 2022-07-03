@@ -5,7 +5,7 @@ const list = [];
 
 //contacts
 router.get('/contact',(req,res,express)=>{
-    res.render('contact',{title: "this is the tittle ",layout: false});
+    res.render('contact',{layout: false});
 });
 
 router.post('/contact',(req,res,express)=>{
@@ -17,23 +17,27 @@ router.post('/contact',(req,res,express)=>{
 
 //MyProjects
 router.get('/MyProjects',(req,res,express)=>{
-    res.render('MyProjects',{title: "this is the tittle ",layout: false});
+    res.render('MyProjects',{layout: false});
 });
 
 //MySkills
 router.get('/MySkill',(req,res,express)=>{
-    res.render('MySkill',{title: "this is the tittle ",layout: false});
+    res.render('MySkill',{layout: false});
 });
 
 //MyValues
 router.get('/MyValues',(req,res,express)=>{
-    res.render('MyValues',{title: "this is the tittle ",layout: false});
+    res.render('MyValues',{layout: false});
 });
 
 
 //index
 router.get('/', (req, res, express) => {
-    res.render('index',{title: "this is the tittle ",layout: false});
+    res.render('index',{
+        title: "this is the tittle ",
+        list: list,
+        check: list.length > 0,
+        layout: false});
 });
 
 
