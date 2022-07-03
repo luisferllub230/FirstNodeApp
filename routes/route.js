@@ -1,12 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
+const list = [];
+
 //contacts
 router.get('/contact',(req,res,express)=>{
     res.render('contact',{title: "this is the tittle ",layout: false});
 });
 
 router.post('/contact',(req,res,express)=>{
+
+    list.push({names: req.body.names,lasName: req.body.lasName, email: req.body.email, message: req.body.description});
     console.log(req.body);
     res.status(302).redirect('/');
 });
@@ -33,4 +37,5 @@ router.get('/', (req, res, express) => {
 });
 
 
-module.exports = router;
+exports.router = router;
+exports.list = list;

@@ -16,7 +16,7 @@ app.set('view engine', 'hbs');
 app.set('views', 'view');
 
 //routes
-app.use(routes);
+app.use(routes.router);
 
 //listen to port
 app.listen(5500);
